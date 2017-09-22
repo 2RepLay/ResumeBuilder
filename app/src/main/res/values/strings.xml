@@ -4,4 +4,7 @@
     <string name="name">Name</string>
     <string name="surname">Surname</string>
     <string name="enter">Enter</string>
+    <string name="vacancy">Vacancy</string>
+    <string name="salary">Salary</string>
+    <string name="save">Save</string>
 </resources>

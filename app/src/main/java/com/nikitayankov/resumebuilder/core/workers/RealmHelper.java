@@ -1,6 +1,6 @@
-package com.nikitayankov.resumebuilder.core.services;
+package com.nikitayankov.resumebuilder.core.workers;
 
-import com.nikitayankov.resumebuilder.core.models.UserModule;
+import com.nikitayankov.resumebuilder.core.models.user.UserModule;
 
 import io.realm.RealmConfiguration;
 

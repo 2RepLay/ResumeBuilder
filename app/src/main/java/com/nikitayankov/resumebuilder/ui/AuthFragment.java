@@ -10,12 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nikitayankov.resumebuilder.R;
-import com.nikitayankov.resumebuilder.core.models.User;
-import com.nikitayankov.resumebuilder.core.models.UserModule;
+import com.nikitayankov.resumebuilder.core.models.user.User;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +21,7 @@ import butterknife.OnClick;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-import static com.nikitayankov.resumebuilder.core.services.RealmHelper.Config;
+import static com.nikitayankov.resumebuilder.core.workers.RealmHelper.Config;
 
 
 public class AuthFragment extends Fragment {

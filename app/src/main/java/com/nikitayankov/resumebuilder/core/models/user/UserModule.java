@@ -1,4 +1,4 @@
-package com.nikitayankov.resumebuilder.core.models;
+package com.nikitayankov.resumebuilder.core.models.user;
 
 import io.realm.annotations.RealmModule;
 

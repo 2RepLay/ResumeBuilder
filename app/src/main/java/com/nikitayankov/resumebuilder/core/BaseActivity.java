@@ -9,12 +9,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.nikitayankov.resumebuilder.R;
-import com.nikitayankov.resumebuilder.core.models.User;
-import com.nikitayankov.resumebuilder.core.services.RealmHelper;
+import com.nikitayankov.resumebuilder.core.models.user.User;
+import com.nikitayankov.resumebuilder.core.workers.RealmHelper;
 import com.nikitayankov.resumebuilder.ui.AuthFragment;
 import com.nikitayankov.resumebuilder.ui.GalleryFragment;
-
-import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
