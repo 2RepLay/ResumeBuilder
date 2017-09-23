@@ -24,7 +24,11 @@ public class CVCreatorFragment extends Fragment {
 
     @OnClick(R.id.save)
     public void saveCV() {
-        Toast.makeText(getActivity(), "SAVE", Toast.LENGTH_SHORT).show();
+        Fragment fragment = new PreviewFragment();
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit();
     }
 
     @BindView(R.id.vacancy)
