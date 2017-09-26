@@ -84,6 +84,34 @@ public class CV extends RealmObject {
         }
     }
 
+    public String getName() {
+        return mName;
+    }
+
+    public String getVacancy() {
+        return mVacancy;
+    }
+
+    public long getSalary() {
+        return mSalary;
+    }
+
+    public String getEmail() {
+        return mEmail;
+    }
+
+    public String getPhone() {
+        return mPhone;
+    }
+
+    public RealmList<Skill> getSkills() {
+        return mSkills;
+    }
+
+    public RealmList<Achievement> getAchievements() {
+        return mAchievements;
+    }
+
     @Override
     public String toString() {
         return super.toString();

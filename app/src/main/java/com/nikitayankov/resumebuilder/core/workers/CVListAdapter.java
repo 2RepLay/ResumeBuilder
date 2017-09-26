@@ -19,18 +19,18 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.realm.OrderedRealmCollection;
+import io.realm.RealmRecyclerViewAdapter;
 
-public class CVListAdapter extends RecyclerView.Adapter<CVListAdapter.CVListViewHolder> {
+public class CVListAdapter extends RealmRecyclerViewAdapter<CV, CVListAdapter.CVListViewHolder> {
     private Context mContext;
-    private ArrayList<CV> mCVS;
+    private ArrayList<CV> mCVS = new ArrayList<>();
 
-    public CVListAdapter(Context context) {
-        mContext = context;
-    }
+    public CVListAdapter(Context context, OrderedRealmCollection<CV> cvs) {
+        super(cvs, true);
 
-    public CVListAdapter(Context context, ArrayList<CV> cvs) {
         mContext = context;
-        mCVS = cvs;
+        mCVS.addAll(cvs);
     }
 
     @Override
@@ -42,13 +42,12 @@ public class CVListAdapter extends RecyclerView.Adapter<CVListAdapter.CVListView
 
     @Override
     public void onBindViewHolder(CVListViewHolder holder, int position) {
-        holder.mCV = new CV();
-        holder.mCVTitle.setText(String.valueOf(System.currentTimeMillis()));
+        holder.setCV(mCVS.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return mCVS.size();
     }
 
     class CVListViewHolder extends RecyclerView.ViewHolder {
@@ -72,6 +71,11 @@ public class CVListAdapter extends RecyclerView.Adapter<CVListAdapter.CVListView
             super(itemView);
 
             ButterKnife.bind(this, itemView);
+        }
+
+        void setCV(CV cv){
+            this.mCV = cv;
+            this.mCVTitle.setText(cv.getVacancy());
         }
     }
 }

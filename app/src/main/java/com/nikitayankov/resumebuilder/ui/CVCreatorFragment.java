@@ -98,7 +98,16 @@ public class CVCreatorFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_create_cv, container, false);
         ButterKnife.bind(this, view);
 
+        loadDebug();
         return view;
+    }
+
+    @SuppressLint("SetTextI18n")
+    void loadDebug() {
+        this.mVacancy.setText("Android");
+        this.mSalary.setText("2000");
+        this.mEmail.setText("nickrocket97@gmail.com");
+        this.mPhone.setText("0123456789");
     }
 
     @Override
