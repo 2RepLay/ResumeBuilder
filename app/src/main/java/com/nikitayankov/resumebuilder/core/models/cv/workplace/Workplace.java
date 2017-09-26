@@ -11,7 +11,4 @@ public class Workplace extends RealmObject {
 
     @Nullable
     public Long endOfWork;
-
-    @Nullable
-    public String[] responsibility;
 }

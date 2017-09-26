@@ -33,9 +33,6 @@ public class GalleryFragment extends Fragment {
         Fragment fragment = new CVCreatorFragment();
 
         fragmentManager.beginTransaction()
-                .setCustomAnimations(
-                        android.R.animator.fade_in, android.R.animator.fade_out,
-                        android.R.animator.fade_in, android.R.animator.fade_out)
                 .replace(R.id.frame, fragment)
                 .addToBackStack(null)
                 .commit();
@@ -62,6 +59,9 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
         ButterKnife.bind(this, view);
+
+        mCVList.setAdapter(mCVListAdapter);
+        mCVList.setLayoutManager(mCVListLayoutManager);
 
         return view;
     }

@@ -10,4 +10,8 @@
     <string name="cv_head">- CURRICULUM VITAE -</string>
     <string name="your_photo">Your photo</string>
     <string name="info">Some info</string>
+    <string name="cv_photo">Your photo</string>
+    <string name="cv_back">CV background</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
 </resources>

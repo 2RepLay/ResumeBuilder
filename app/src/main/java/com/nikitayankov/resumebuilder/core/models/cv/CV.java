@@ -1,43 +1,95 @@
 package com.nikitayankov.resumebuilder.core.models.cv;
 
+import com.nikitayankov.resumebuilder.core.models.cv.achievement.Achievement;
+import com.nikitayankov.resumebuilder.core.models.cv.skill.Skill;
+
+import org.json.JSONObject;
+
+import java.util.List;
+
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 public class CV extends RealmObject {
-    private String name;
-    private String vacancy;
-    private long salary;
+    private String mName;
+    private String mVacancy;
+    private long mSalary;
 
-    private String email;
-    private String phone;
+    private String mEmail;
+    private String mPhone;
 
-    public Builder getBuilder() {
-        return new Builder();
+    private RealmList<Skill> mSkills = new RealmList<Skill>();
+    private RealmList<Achievement> mAchievements = new RealmList<Achievement>();
+
+    public static Builder newBuilder() {
+        return new CV().new Builder();
     }
 
-    private class Builder {
-        public CV setName(String name) {
-            CV.this.name = name;
+    public class Builder {
+        private Builder() {
 
-            return CV.this;
         }
 
-        public CV addContactInformation(CVContactInformation contactInformation) {
-            CV.this.email = contactInformation.getEmail();
-            CV.this.phone = contactInformation.getPhone();
+        public Builder setName(String name) {
+            CV.this.mName = name;
 
-            return CV.this;
+            return this;
         }
 
-        public CV setVacancy(String vacancy) {
-            CV.this.vacancy = vacancy;
+        public Builder addContactInformation(CVContactInformation contactInformation) {
+            CV.this.mEmail = contactInformation.getEmail();
+            CV.this.mPhone = contactInformation.getPhone();
 
-            return CV.this;
+            return this;
         }
 
-        public CV setSalary(long salary) {
-            CV.this.salary = salary;
+        public Builder setVacancy(String vacancy) {
+            CV.this.mVacancy = vacancy;
 
+            return this;
+        }
+
+        public Builder setSalary(long salary) {
+            CV.this.mSalary = salary;
+
+            return this;
+        }
+
+        public Builder addSkill(Skill skill) {
+            CV.this.mSkills.add(skill);
+
+            return  this;
+        }
+
+        public Builder addSkills(List<Skill> skills) {
+            CV.this.mSkills.addAll(skills);
+
+            return this;
+        }
+
+        public Builder addAchievement(Achievement achievement) {
+            CV.this.mAchievements.add(achievement);
+
+            return this;
+        }
+
+        public Builder addAchievements(List<Achievement> achievements) {
+            CV.this.mAchievements.addAll(achievements);
+
+            return this;
+        }
+
+        public CV build() {
             return CV.this;
         }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    public JSONObject toJSON() {
+        return new JSONObject();
     }
 }

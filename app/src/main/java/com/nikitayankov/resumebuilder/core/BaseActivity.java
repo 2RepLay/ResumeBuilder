@@ -25,6 +25,7 @@ public class BaseActivity extends AppCompatActivity implements AuthFragment.OnFr
 
         setContentView(R.layout.fragment_activity);
 
+        // TODO: 23.09.2017 Remove fragment manager from here
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         Fragment next;
