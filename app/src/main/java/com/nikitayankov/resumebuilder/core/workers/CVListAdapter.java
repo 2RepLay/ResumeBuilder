@@ -56,9 +56,15 @@ public class CVListAdapter extends RealmRecyclerViewAdapter<CV, CVListAdapter.CV
         @BindView(R.id.cv_title)
         TextView mCVTitle;
 
+        @BindView(R.id.cv_salary)
+        TextView mCVSalary;
+
+//        @BindView(R.id.cv_date)
+//        TextView mCVDate;
+
         @OnClick(R.id.card_root)
         void onClick() {
-            PreviewFragment fragment = new PreviewFragment();
+            PreviewFragment fragment = PreviewFragment.getInstance(mCV);
 
             FragmentManager fm = ((AppCompatActivity) mContext).getFragmentManager();
             fm.beginTransaction()
@@ -76,6 +82,7 @@ public class CVListAdapter extends RealmRecyclerViewAdapter<CV, CVListAdapter.CV
         void setCV(CV cv){
             this.mCV = cv;
             this.mCVTitle.setText(cv.getVacancy());
+            this.mCVSalary.setText(String.valueOf(cv.getSalary()));
         }
     }
 }

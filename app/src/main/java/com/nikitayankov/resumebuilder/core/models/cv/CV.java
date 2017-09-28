@@ -5,12 +5,13 @@ import com.nikitayankov.resumebuilder.core.models.cv.skill.Skill;
 
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.List;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
-public class CV extends RealmObject {
+public class CV extends RealmObject implements Serializable {
     private String mName;
     private String mVacancy;
     private long mSalary;

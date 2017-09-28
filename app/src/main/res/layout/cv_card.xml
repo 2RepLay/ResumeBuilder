@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
-    android:id="@+id/card_root"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp">
@@ -19,9 +19,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:contentDescription="@string/cv_back"
                 android:scaleType="centerCrop"
-                android:src="@color/colorAccent"
-                android:contentDescription="@string/cv_back"/>
+                android:src="@color/colorAccent"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -29,22 +29,51 @@
                 android:layout_centerInParent="true"
                 android:background="@drawable/circle_shape"
                 android:contentDescription="@string/cv_photo"/>
-
         </RelativeLayout>
 
-        <RelativeLayout
-            android:padding="16dp"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/cv_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="Android Developer"/>
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cv_date"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#31313131"-->
+                    <!--android:paddingBottom="4dp"-->
+                    <!--android:paddingEnd="16dp"-->
+                    <!--android:paddingStart="16dp"-->
+                    <!--android:paddingTop="4dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--tools:text="23.03.17"/>-->
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/cv_title"
+                android:id="@+id/cv_salary"
+                android:layout_marginTop="8dp"
+                android:alpha="0.66"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                tools:text="Android Developer"/>
-
-        </RelativeLayout>
+                android:textSize="14sp"
+                tools:text="2000$"/>
+        </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

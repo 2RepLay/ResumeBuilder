@@ -14,4 +14,6 @@
     <string name="cv_back">CV background</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
+    <string name="hh_client_id">IRAVPJKQKUVASEL928F23TMFBFRKKINP50S1KK8L72T7DL3JUTRETN2V54OIL628</string>
+    <string name="hh_client_secret">PIRMKLVMBUA1EUF3VKCCF02BETTBSR7OS7OF44QIUPA2QKG34TCOOU8EK74CGO2V</string>
 </resources>
