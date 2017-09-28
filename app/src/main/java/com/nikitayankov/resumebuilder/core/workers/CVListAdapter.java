@@ -2,7 +2,6 @@ package com.nikitayankov.resumebuilder.core.workers;
 
 import android.app.FragmentManager;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 import com.nikitayankov.resumebuilder.R;
 import com.nikitayankov.resumebuilder.core.models.cv.CV;
-import com.nikitayankov.resumebuilder.ui.PreviewFragment;
+import com.nikitayankov.resumebuilder.ui.fragment.PreviewFragment;
 
 import java.util.ArrayList;
 

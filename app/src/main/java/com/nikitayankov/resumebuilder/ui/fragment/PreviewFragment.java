@@ -1,4 +1,4 @@
-package com.nikitayankov.resumebuilder.ui;
+package com.nikitayankov.resumebuilder.ui.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.nikitayankov.resumebuilder.ui;
+package com.nikitayankov.resumebuilder.ui.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;

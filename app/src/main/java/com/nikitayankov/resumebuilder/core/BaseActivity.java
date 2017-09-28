@@ -1,5 +1,6 @@
 package com.nikitayankov.resumebuilder.core;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -10,22 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.nikitayankov.resumebuilder.R;
 import com.nikitayankov.resumebuilder.core.debug.Debug;
-import com.nikitayankov.resumebuilder.core.models.user.User;
 import com.nikitayankov.resumebuilder.core.services.HeadHunterService;
 import com.nikitayankov.resumebuilder.core.workers.RealmHelper;
-import com.nikitayankov.resumebuilder.ui.AuthFragment;
-import com.nikitayankov.resumebuilder.ui.GalleryFragment;
+import com.nikitayankov.resumebuilder.ui.dialog.HHDialog;
+import com.nikitayankov.resumebuilder.ui.fragment.AuthFragment;
 
 import java.io.IOException;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
-import io.realm.RealmResults;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class BaseActivity extends AppCompatActivity implements AuthFragment.OnFragmentInteractionListener {
@@ -51,6 +48,7 @@ public class BaseActivity extends AppCompatActivity implements AuthFragment.OnFr
 //        }
 //
 //        ft.add(next, "auth").replace(R.id.frame, next).commit();
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -68,7 +66,7 @@ public class BaseActivity extends AppCompatActivity implements AuthFragment.OnFr
                 try {
                     Response<String> response = call.execute();
 
-                    Debug.Log(response.body());
+                    showDialog(response.body());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -85,5 +83,17 @@ public class BaseActivity extends AppCompatActivity implements AuthFragment.OnFr
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    void showDialog(String content) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        DialogFragment newFragment = HHDialog.newInstance(content);
+        newFragment.show(ft, "dialog");
     }
 }
