@@ -3,6 +3,7 @@ package com.nikitayankov.resumebuilder.ui.fragment;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,6 +26,12 @@ import static com.nikitayankov.resumebuilder.core.workers.RealmHelper.Config;
 
 
 public class AuthFragment extends Fragment {
+    public static final String ACTION_HH = "hh";
+    public static final String ACTION_RA = "ra";
+
+    public static final int LOGIN_HH = 100;
+    public static final int LOGIN_RA = 200;
+
     private OnFragmentInteractionListener mListener;
     private Realm mRealm;
 
@@ -34,9 +41,7 @@ public class AuthFragment extends Fragment {
     @BindView(R.id.surname)
     EditText mSurname;
 
-    @BindView(R.id.enter)
-    Button mEnter;
-
+    @BindView(R.id.enter) Button mEnter;
     @OnClick(R.id.enter)
     public void setEnter(View view) {
         String name = mName.getText().toString();

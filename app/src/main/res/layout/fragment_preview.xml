@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
-    android:background="@color/white"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,6 +23,7 @@
             tools:text="@string/cv_head"/>
 
         <ImageView
+            android:id="@+id/cv_photo"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="8dp"
@@ -30,6 +31,7 @@
             android:contentDescription="@string/your_photo"/>
 
         <TextView
+            android:id="@+id/cv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -40,6 +42,7 @@
             tools:text="Nikita Yankov"/>
 
         <TextView
+            android:id="@+id/cv_vacancy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -50,6 +53,7 @@
             tools:text="Android / Frontend developer"/>
 
         <TextView
+            android:id="@+id/cv_salary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_thin"
@@ -57,6 +61,27 @@
             android:textSize="12sp"
             android:textStyle="bold"
             tools:text="1500 $"/>
+
+        <TextView
+            android:id="@+id/cv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto_thin"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="actually@email.com"/>
+
+        <TextView
+            android:id="@+id/cv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_thin"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:text="+ (012) 345 67 89"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
